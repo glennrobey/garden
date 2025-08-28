@@ -64,18 +64,50 @@ Spring is approaching and some gardeners are discussing how they want to organiz
 | 2 | carrots | | onions | peas | peas |
 | 3 | carrots | tomatoes | tomatoes | tomatoes | |
 
-### Level 6 (optional)
+### Level 6
 
 ![](images/06.png)
+| | 1 | 2 | 3 | 4 | 5 |
+|---|---------|----------|----------|----------|---------|
+| 1 | carrots | carrots | carrots | carrots | carrots |
+| 1 | onions | peas | peas | peas | tomatoes |
+| 1 | onions |peas | peas |peas | tomatoes |
+| 1 | lettuce | lettuce | lettuce | lettuce | lettuce |
 
-This level is a bit different. It would be very tedious to dictate where each of the many children would go. Instead, each row should fit as many plots as possible, as long as each plot is at least `5rem` wide. Within each row, each plot will take up 1 fraction of the available space, and will grow if there is room to grow. The grid will automatically make as many rows as needed to fit all of the plots given these constraints. The rows will be `5rem` high.
+### Level 7
 
-To accomplish this, you will need to independently research the following:
+![](images/07.png)
 
-- [repeat](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat)
-- [repeat auto-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fit)
-- [minmax](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax)
-- [grid-auto-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows)
+What if we want the _width_ of each column to respond to the viewport width?
+
+For this level, use [repeat](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat)
+and [minmax](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax)
+to make 5 columns that are at _minimum_ `5ch` wide, but will expand to a
+_maximum_ of `1fr` wide.
+
+### Level 8
+
+![](images/08.png)
+
+What if we want the _number_ of columns to respond to the viewport width?
+
+For this level, use [repeat auto-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fit)
+to fit as many `15ch`-wide grid items as possible in each row. This will force a
+grid item to wrap to a new row if it can't fit in the previous row.
+
+Use [grid-auto-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows)
+to make each automatically generated row `5ch` tall.
+
+### Level 9
+
+![](images/09.png)
+
+Use `repeat`, `auto-fit`, `minmax`, and `grid-auto-rows` so that:
+
+- each row should fit as many grid items as possible
+- each grid item is at least `5rem` wide
+- each grid item grows to take up `1fr` of the available space
+- automatically generated rows are `5rem` high
 
 Try your best!
 
